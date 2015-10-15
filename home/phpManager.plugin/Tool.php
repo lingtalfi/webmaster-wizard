@@ -50,7 +50,7 @@ class Tool
             '{datetime}',
             '{date}',
         ], [
-            date('Y-m-d__h-i-s'),
+            date('Y-m-d__H-i-s'),
             date('Y-m-d'),
         ], $str);
         return $str;
