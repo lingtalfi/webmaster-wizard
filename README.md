@@ -63,6 +63,12 @@ patch2Local      |     patchl            |  apply a sql file (bunch of sql state
 patch2Remote     |     patchr            |  apply a sql file (bunch of sql statements) to the remote database  (use this when you update your database structure for instance)   
 backupDataLocal  |     bd                |  creates a backup of your local database with data, and put it in a given location     
 backupStructureLocal  |     bs           |  creates a backup of your local database without data, just the structure, and put it in a given location
+saveFromLocal  |     sl           |  dumps the local database to a given tmp file
+saveFromLocalDestructive  |     sld           |  dumps the local database to a given tmp file, using drop database statement
+applyToLocal  |     al           |  applies the statements in the tmp file to the local database
+saveFromRemote  |     sr           |  dumps the remote database to a given (local) tmp file
+saveFromRemoteDestructive  |     srd           |  dumps the remote database to a given (local) tmp file, using drop database statement
+applyToRemote  |     ar           |  applies the statements in the (local) tmp file to the remote database
 
 
 
@@ -73,7 +79,9 @@ backupStructureLocal  |     bs           |  creates a backup of your local datab
 
 ### What does this command do?
 
-The above commands are almost just aliases for corresponding bash commands: 
+The above commands are almost just aliases for simple bash commands.
+Here are some correspondances between the wwiz commands and the bash commands.
+
 
 
 - downloadDb 
@@ -155,7 +163,7 @@ sketch=1
 
 
 sshString(php)*:
-sketch=komin
+sketch=conn1
 
 
 localDbInfo(php)*:
@@ -168,6 +176,12 @@ sketch=sketch:sketch:ZERj07Fe1
 
 patchLocation(php)*:
 sketch=/path/to/app/patches/last.sql
+
+
+
+tmpFile(php)*:
+sketch=/tmp/wwiz.tmp.sql
+
 
 
 #----------------------------------------
@@ -195,7 +209,6 @@ patch2Local(php):
 sketch=
 
 
-
 patch2Remote(php):
 sketch=
 
@@ -207,6 +220,27 @@ sketch=/tmp/sketch.data.{datetime}.sql
 backupStructureLocal(php):
 sketch=/tmp/sketch.schema.{datetime}.sql
 
+
+
+# Database apply - save (2015-10-15 by lingTalfi)
+#----------------------------------------
+saveFromLocal(php):
+sketch=
+
+saveFromLocalDestructive(php):
+sketch=
+
+applyToLocal(php):
+sketch=
+
+saveFromRemote(php):
+sketch=
+
+saveFromRemoteDestructive(php):
+sketch=
+
+applyToRemote(php):
+sketch=
 
 
 
