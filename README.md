@@ -397,7 +397,12 @@ Obviously, you can change/add/remove the aliases there, but that's my personal d
 
 
 
+Links
+----------------------
 
+
+Web wizard uses [phpManager plugin]( https://github.com/lingtalfi/bashmanager_plugin_phpmanager ) for bash manager.
+  
 
 
 
