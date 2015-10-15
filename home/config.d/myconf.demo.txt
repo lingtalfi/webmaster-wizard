@@ -24,6 +24,10 @@ sketch=/path/to/app/patches/last.sql
 
 
 
+tmpFile(php)*:
+sketch=/tmp/wwiz.tmp.sql
+
+
 
 #----------------------------------------
 # debug task
@@ -63,3 +67,22 @@ sketch=/tmp/sketch.schema.{datetime}.sql
 
 
 
+# Database apply - save (2015-10-15 by lingTalfi)
+#----------------------------------------
+saveFromLocal(php):
+sketch=
+
+saveFromLocalDestructive(php):
+sketch=
+
+applyToLocal(php):
+sketch=
+
+saveFromRemote(php):
+sketch=
+
+saveFromRemoteDestructive(php):
+sketch=
+
+applyToRemote(php):
+sketch=

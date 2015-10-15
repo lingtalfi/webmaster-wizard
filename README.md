@@ -382,6 +382,15 @@ Open/create the ~/.bashmanager file and write the following content in it:
     bd = -t backupDataLocal -p
     bs = -t backupStructureLocal -p
     print = -t printEnv -p
+        
+    al = -t applyToLocal -p
+    ar = -t applyToRemote -p
+    sld = -t saveFromLocalDestructive -p
+    sl = -t saveFromLocal -p
+    srd = -t saveFromRemoteDestructive -p
+    sr = -t saveFromRemote -p
+
+    
 
 
 Obviously, you can change/add/remove the aliases there, but that's my personal defaults.
@@ -397,8 +406,18 @@ Web wizard uses [phpManager plugin]( https://github.com/lingtalfi/bashmanager_pl
   
 
 
+History Revisions
+--------------------
 
 
+- 1.1.0 -- 2015-10-15 23:38
+
+    Add Database save-apply tasks
+
+    
+- 1.0.0 -- 2015-10-15 09:47
+
+    Initial revision
 
 
 

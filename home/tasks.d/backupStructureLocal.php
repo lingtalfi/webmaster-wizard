@@ -11,7 +11,7 @@ PhpManager::create()
         $cmd = Tool::replaceTimeStamps($cmd);
 
         if ('1' === $c->secure) {
-            $displayCmd = $o->replaceTags("mysqldump --no-data -u{localDbUser} -p{localDbPass} {localDb} > \"{&_value_}\"");
+            $displayCmd = $o->replaceTags("mysqldump --no-data -u{localDbUser} -pXXX {localDb} > \"{&_value_}\"");
             $displayCmd = Tool::replaceTimeStamps($displayCmd);
         }
         else {

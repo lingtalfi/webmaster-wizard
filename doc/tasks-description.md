@@ -19,6 +19,9 @@ This feature was clearly designed to create configuration tasks.
 So now let's go through each task and explain briefly what it does.
 
 
+Configuration Tasks
+-----------------------
+
 ### The secure task
 
 possible values: 0 | 1
@@ -75,13 +78,24 @@ For instance, adding a new table can be patched to your remote database without 
 The task's value represents the location of the patch on the filesystem of your local machine.<br>
 
 
+### tmpFile (1.1+)
+
+Defines the tmpFile that "database save-apply" tasks use.
 
 
+
+Util Tasks
+-----------------------
 
 ### printEnv
 
 This task display the keys and values of the CONFIG array.
 If you extend the webwizard, it could be useful for debugging purposes.
+  
+  
+  
+Database Tasks
+-----------------------
   
   
 ### downloadDb
@@ -121,8 +135,57 @@ This task dumps your local database (structure and data) to the file which path 
 This task dumps your local database (structure only) to the file which path is given by the task's value
 
 
+Database Tasks, save-apply (1.1+)
+-----------------------
+
+Do the basic mysql < file and mysqldump operations in any direction using two consecutive commands.
+Gives more power to your fingertips.
 
 
+![wwiz -- apply-save ](http://s19.postimg.org/hx2nhyoir/wwiz_save_apply.jpg)
+
+
+### saveFromLocal
+
+Takes no value.
+Dumps the local database to the tmpFile defined by the tmpFile task.
+Uses the basic mysqldump command.
+
+
+### saveFromLocalDestructive
+
+Takes no value.
+Dumps the local database to the tmpFile defined by the tmpFile task.
+Uses the mysqldump command with the drop-database feature.
+
+
+
+### applyToLocal
+
+Takes no value.
+Applies the sql statements stored in the tmpFile defined by the tmpFile task to the local database.
+
+
+
+### saveFromRemote
+
+Takes no value.
+Dumps the remote database to the tmpFile defined by the tmpFile task.
+Uses the basic mysqldump command.
+
+
+### saveFromRemoteDestructive
+
+Takes no value.
+Dumps the remote database to the tmpFile defined by the tmpFile task.
+Uses the mysqldump command with the drop-database feature.
+
+
+
+### applyToRemote
+
+Takes no value.
+Applies the sql statements stored in the tmpFile defined by the tmpFile task to the remote database.
 
 
 
