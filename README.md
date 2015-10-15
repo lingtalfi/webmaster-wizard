@@ -220,7 +220,7 @@ sketch=/tmp/sketch.schema.{datetime}.sql
 
 Adapt the values to fit your application.
 Read more about the 
-[tasks here](https://github.com/lingtalfi/webmaster-wizard).
+[tasks here](https://github.com/lingtalfi/webmaster-wizard/blob/master/doc/tasks-description.md).
 
 
 For now, we are done with the task configuration.
