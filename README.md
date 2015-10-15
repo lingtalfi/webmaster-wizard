@@ -170,14 +170,6 @@ patchLocation(php)*:
 sketch=/path/to/app/patches/last.sql
 
 
-
-backupDirLocal(php)*:
-sketch=/path/to/private/mysql/backup
-
-
-
-
-
 #----------------------------------------
 # debug task
 #----------------------------------------
@@ -289,9 +281,6 @@ webWizard(v): -------------------------------------
 webWizard(v): ---- TASK:  patchLocation ------------
 webWizard(v): populating CONFIG[PATCH_LOCATION]=/path/to/app/patches/last.sql
 webWizard(v): --------------------------------------
-webWizard(v): ---- TASK:  backupDirLocal ------------
-webWizard(v): populating CONFIG[BACKUP_DIR_LOCAL]=/path/to/private/mysql/backup
-webWizard(v): ---------------------------------------
 webWizard(v): ---- TASK:  printEnv ------------
 webWizard(v): BASH_MANAGER_CONFIG_SECURE: 1
 webWizard(v): BASH_MANAGER_CONFIG__PROGRAM_NAME: webWizard

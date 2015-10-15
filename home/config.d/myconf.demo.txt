@@ -24,12 +24,6 @@ sketch=/path/to/app/patches/last.sql
 
 
 
-backupDirLocal(php)*:
-sketch=/path/to/private/mysql/backup
-
-
-
-
 
 #----------------------------------------
 # debug task
