@@ -4,9 +4,12 @@ Webmaster Wizard
 
 
 
-
 The webmaster wizard is a tool for webmasters that allows you to quickly perform basic administration tasks.
 It's all about automation.
+
+
+
+![wwiz-demo](http://s19.postimg.org/v24diue8z/wwiz_demo.gif)
 
 
 
