@@ -21,6 +21,8 @@ Audience
     application on a remote server. From time to time, you need to perform administrative tasks on the 
     database of the application.
     
+    
+- you want to execute tasks on a batch of files (resizing images, renaming files).     
 
 
 
@@ -29,14 +31,14 @@ Audience
 Features
 -------------
 
-- cool native tasks: download remote db, recreate remote db in local, apply sql patch to remote or local machine, ...
+- cool native tasks: download remote db, recreate remote db in local, apply sql patch to remote or local machine, resize all the images in a directory, rename files, ...
 - writing a new task is easy (native tasks are coded in php) 
 - create your own alias 
 - built on top of bash manager with phpManager plugin
 
 
 
-As far as I'm concerned, the main benefit of the webmaster wizard is probably that instead of typing long lines 
+> As far as I'm concerned, the main benefit of the webmaster wizard is probably that instead of typing long lines 
 like this (which I personally don't alwyas remember by the way):
 
   
@@ -69,10 +71,16 @@ applyToLocal  |     al           |  applies the statements in the tmp file to th
 saveFromRemote  |     sr           |  dumps the remote database to a given (local) tmp file
 saveFromRemoteDestructive  |     srd           |  dumps the remote database to a given (local) tmp file, using drop database statement
 applyToRemote  |     ar           |  applies the statements in the (local) tmp file to the remote database
+batchFileImport  |     import           |  import a directory into a tmp working directory
+batchFileImportClean  |     importc           |  import a directory into a tmp working directory, cleans the tmp working directory before hand
+batchFileResize  |     resize           |  resize images (using [image magick](http://www.imagemagick.org/script/index.php)) in place from the tmp working directory
+batchFileRename  |     rename           |  rename files (using [ornella tag notation](https://github.com/lingtalfi/ornella/blob/master/ornella-tag-notation.md)) in place from the tmp working directory
+batchFileExport  |     export           |  export a the tmp working directory to a given destination directory
+batchFileExportDestructive  |     exportd           |  export a the tmp working directory to a given destination directory, cleans the destination directory before hand
 
 
 
-
+Want more, check out the complete [tasks description](https://github.com/lingtalfi/webmaster-wizard/blob/master/doc/tasks-description.md).
 
 
 
@@ -284,7 +292,7 @@ Which, as you should know, means: execute the bashmanager with:
 Actually the verbose flag is crucial here, if you forget it, you will get no output at all.
 
 
-You should see something like this:
+You should see something like this (more or less):
 
 ```bash
 webmaster-wizard > bashman -h "/path/to/your/home" -v -c myconf -t printEnv -p sketch
@@ -406,24 +414,45 @@ The documentation for [bashmanager aliases is here](https://github.com/lingtalfi
 
 Open/create the ~/.bashmanager file and write the following content in it:
 
+```bash
+alias[webWizard]:
 
-    alias[webWizard]:
-    
-    ddb = -t downloadDb -p
-    mirror = -t mirror -p
-    patchl = -t patch2Local -p
-    patchr = -t patch2Remote -p
-    bd = -t backupDataLocal -p
-    bs = -t backupStructureLocal -p
-    print = -t printEnv -p
-        
-    al = -t applyToLocal -p
-    ar = -t applyToRemote -p
-    sld = -t saveFromLocalDestructive -p
-    sl = -t saveFromLocal -p
-    srd = -t saveFromRemoteDestructive -p
-    sr = -t saveFromRemote -p
 
+#--------------------------
+# database
+#--------------------------
+ddb = -t downloadDb -p
+mirror = -t mirror -p
+patchl = -t patch2Local -p
+patchr = -t patch2Remote -p
+bd = -t backupDataLocal -p
+bs = -t backupStructureLocal -p
+print = -t printEnv -p
+
+
+
+
+#--------------------------
+# database: save--aply
+#--------------------------
+al = -t applyToLocal -p
+ar = -t applyToRemote -p
+sld = -t saveFromLocalDestructive -p
+sl = -t saveFromLocal -p
+srd = -t saveFromRemoteDestructive -p
+sr = -t saveFromRemote -p
+
+
+#--------------------------
+# batch file treatment
+#--------------------------
+import = -t batchFileImport -p _none_ --option-_VALUE_batchFileImport
+importc = -t batchFileImportClean -p _none_ --option-_VALUE_batchFileImportClean
+export = -t batchFileExport -p _none_ --option-_VALUE_batchFileExport
+exportd = -t batchFileExportDestructive -p _none_ --option-_VALUE_batchFileExportDestructive
+resize = -t batchFileResize -p _none_ --option-_VALUE_batchFileResize 
+rename = -t batchFileRename -p _none_ --option-_VALUE_batchFileRename  
+```
     
 
 
@@ -444,6 +473,11 @@ History Revisions
 --------------------
 
 
+- 1.2.0 -- 2015-10-22 12:00
+
+    Add Batch File Treatment tasks
+    
+    
 - 1.1.0 -- 2015-10-15 23:38
 
     Add Database save-apply tasks

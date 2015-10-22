@@ -29,6 +29,20 @@ sketch=/tmp/wwiz.tmp.sql
 
 
 
+# batch file
+
+defaultImportDir(php)*:
+*=/tmp/batchFile/import
+
+defaultExportDir(php)*:
+*=/tmp/batchFile/export
+
+tmpDir(php)*:
+*=/tmp/batchFile/tmp
+
+
+
+
 #----------------------------------------
 # debug task
 #----------------------------------------
@@ -86,3 +100,15 @@ sketch=
 
 applyToRemote(php):
 sketch=
+
+
+
+#----------------------------------------
+# Batch File Treatment (2015-10-22 by LingTalfi)
+#----------------------------------------
+batchFileImport(php):
+batchFileImportClean(php):
+batchFileResize(php):
+batchFileRename(php):
+batchFileExport(php):
+batchFileExportDestructive(php):

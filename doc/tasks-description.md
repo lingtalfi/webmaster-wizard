@@ -189,6 +189,98 @@ Applies the sql statements stored in the tmpFile defined by the tmpFile task to 
 
 
 
+Batch File Tasks, (1.2+)
+-----------------------
+
+Those tasks help doing batch tasks, like renaming all the files in a folder, or resizing all images in a folder,
+that kind of things.
+
+Batch File Treatments is based on a workflow that you can adopt if you want.
+
+
+![wwiz -- batch-file-treatment ](http://s19.postimg.org/kmyr4dmzn/wwiz_batch_file_treatment.jpg)
+
+
+First, you copy a directory to a working directory, so that your original files are left untouched. This is called import.
+Then, you work on the files in the working directory (resize, rename, ...)
+The last step is to export your work to a destination directory of your choice. This is called export.
+
+
+
+### defaultImportDir
+
+Defines the value of the default import dir.
+If you don't specify the import dir location via the command line, the defaultImportDir value
+will be used.
+
+### defaultExportDir
+
+Defines the value of the default export dir.
+If you don't specify the export dir location via the command line, the defaultExportDir value
+will be used.
+
+
+### tmpDir
+
+Defines the location of the tmp dir (working directory).
+
+
+
+### batchFileImport
+
+Copies the content of the import directory to the working directory.
+
+
+### batchFileImportClean
+
+Cleans the working directory, and copies the content of the import directory to the working directory.
+
+
+### batchFileResize
+
+Resize the images (jpeg, png, gif) in the working directory.
+The syntax (assuming you are using ling aliases) is:
+
+```bash
+wwiz resize 600x400
+```
+
+Where 600 is the max width and 400 the max height.
+The image keeps its proportion.
+Images are replaced inline (no copy).
+
+
+
+### batchFileRename
+
+Rename the files in the working directory.
+The syntax (assuming you are using ling aliases) is:
+
+```bash
+wwiz rename {fileName}.{ext}
+```
+
+The allowed tags are:
+
+- {fileName}: the file name as defined in [the file name convention](https://github.com/lingtalfi/ConventionGuy/blob/master/convention.fileNames.eng.md)
+- {ext}: the file extension
+
+We can apply some functions to the tags using the [ornella tag notation](https://github.com/lingtalfi/ornella/blob/master/ornella-tag-notation.md).
+
+
+### batchFileExport
+
+Copies the content of the working directory to the export directory.
+
+
+### batchFileImportClean
+
+Cleans the export directory, and copies the content of the working directory to the export directory.
+
+
+
+
+
 
     
     
