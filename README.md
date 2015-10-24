@@ -473,6 +473,10 @@ History Revisions
 --------------------
 
 
+- 1.3.0 -- 2015-10-24 09:12
+
+    For batch file treatment tasks, on mac, the import and importClean tasks also opens the working directory in the finder
+
 - 1.2.0 -- 2015-10-22 12:00
 
     Add Batch File Treatment tasks

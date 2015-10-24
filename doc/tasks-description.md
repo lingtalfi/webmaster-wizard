@@ -229,11 +229,13 @@ Defines the location of the tmp dir (working directory).
 ### batchFileImport
 
 Copies the content of the import directory to the working directory.
+As of 1.3, on mac, it also opens the working directory in the finder.
 
 
 ### batchFileImportClean
 
 Cleans the working directory, and copies the content of the import directory to the working directory.
+As of 1.3, on mac, it also opens the working directory in the finder.
 
 
 ### batchFileResize
