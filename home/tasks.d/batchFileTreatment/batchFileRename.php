@@ -61,7 +61,7 @@ PhpManager::create()
                                 'ext' => $ext,
                             ]))
                         ) {
-                            
+
                             $newPath = $dir . '/' . $baseName;
                             $oldPath = $item->getRealPath();
                             if ($oldPath !== $newPath) {

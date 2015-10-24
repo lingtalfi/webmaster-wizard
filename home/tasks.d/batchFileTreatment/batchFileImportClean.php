@@ -31,6 +31,10 @@ PhpManager::create()
                         $o->warning($err);
                     }
                 }
+
+                if ('Darwin' === PHP_OS) {
+                    passthru('open "' . $dst . '"');
+                }                
             }
             else {
                 $o->warning("The tmpDir is not defined");

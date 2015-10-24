@@ -5,7 +5,7 @@ require_once __DIR__ . "/../../phpManager.plugin/init.php";
 
 PhpManager::create()
     ->execute('batchFileResize', function (PhpManager $o, Config $c) {
-        
+
         $size = $o->getTaskValue();
         if ($size) {
 
@@ -17,7 +17,7 @@ PhpManager::create()
 find -E $path -iregex ".*\.($extensions)" -exec mogrify -resize $size '{}' \;
 EEE;
             $o->log("Executing command $cmd");
-            
+
             passthru($cmd);
         }
     });
