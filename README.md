@@ -433,7 +433,7 @@ print = -t printEnv -p
 
 
 #--------------------------
-# database: save--aply
+# database: save-apply
 #--------------------------
 al = -t applyToLocal -p
 ar = -t applyToRemote -p
