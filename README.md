@@ -79,9 +79,61 @@ batchFileExport  |     export           |  export a the tmp working directory to
 batchFileExportDestructive  |     exportd           |  export a the tmp working directory to a given destination directory, cleans the destination directory before hand
 
 
-
 Want more, check out the complete [tasks description](https://github.com/lingtalfi/webmaster-wizard/blob/master/doc/tasks-description.md).
 
+
+Other available tasks
+-----------------------
+
+The following tasks are also available since 1.4.0.
+
+
+Task            |      my alias    |      description
+--------------   |  -------------------- | ---------------------
+openHome       |     home               |  mac only: open the home of the web wizard in finder
+listTasks       |     list               |  list the tasks of the currently parsed config file, organized by directories, and show aliases if any
+ai2jpg       |     ai               |  scan the given directory and create a jpg file for every ai file found. If on mac, open the dir afterward. 
+
+
+
+
+
+I personally put them in a local.txt config file (see local.demo.txt in the home/config.d directory), and use the following alias
+
+```bash
+alias wloc='bashman -h "/path/to/your/home" -c local.txt -v'
+```
+
+Also, I added those bashmanager aliases:
+
+```bash
+#--------------------------
+# Mac
+#--------------------------
+home = -t openHome -p _none_
+
+
+#--------------------------
+# Native
+#--------------------------
+list = -t listTasks -p _none_
+
+#--------------------------
+# Image
+#--------------------------
+ai = -t ai2jpg -p _none_
+```
+
+
+
+So to call those tasks, I do the following from a terminal:
+
+
+```bash
+wloc home       
+wloc list
+wloc ai
+```
 
 
 
@@ -472,6 +524,11 @@ Web wizard uses [phpManager plugin]( https://github.com/lingtalfi/bashmanager_pl
 History Revisions
 --------------------
 
+
+- 1.4.0 -- 2016-02-27 21:12
+
+    Add local.txt config file and openHome, listTasks and ai2jpg tasks
+    
 
 - 1.3.0 -- 2015-10-24 09:12
 

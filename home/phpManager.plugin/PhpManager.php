@@ -48,6 +48,12 @@ class PhpManager
     {
         echo 'warning:' . $m . PHP_EOL;
     }
+    
+    
+    public function getHome()
+    {
+        return $_SERVER['BASH_MANAGER_CONFIG__HOME'];
+    }
 
 
     public function printConfigEnv()
