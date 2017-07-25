@@ -525,6 +525,10 @@ History Revisions
 --------------------
 
 
+- 1.6.0 -- 2017-07-25 15:50
+
+    Add MYSQL_PREFIX for databaseApplySave tasks 
+
 - 1.5.0 -- 2016-03-03 09:54
 
     Add imagemagick montage command to ai2jpg task

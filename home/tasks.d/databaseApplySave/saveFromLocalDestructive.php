@@ -7,11 +7,13 @@ PhpManager::create()
     ->execute('saveFromLocalDestructive', function (PhpManager $o, Config $c) {
 
 
-        $cmd = $o->replaceTags("mysqldump --add-drop-database -u{localDbUser} -p{localDbPass} --databases {localDb} > \"{&tmpFile}\"");
+        $command = MYSQL_PREFIX . "mysqldump";
+
+        $cmd = $o->replaceTags("$command --add-drop-database -u{localDbUser} -p{localDbPass} --databases {localDb} > \"{&tmpFile}\"");
         $cmd = Tool::replaceTimeStamps($cmd);
 
         if ('1' === $c->secure) {
-            $displayCmd = $o->replaceTags("mysqldump --add-drop-database -u{localDbUser} -pXXX {localDb} --databases > \"{&tmpFile}\"");
+            $displayCmd = $o->replaceTags("$command --add-drop-database -u{localDbUser} -pXXX {localDb} --databases > \"{&tmpFile}\"");
             $displayCmd = Tool::replaceTimeStamps($displayCmd);
         }
         else {

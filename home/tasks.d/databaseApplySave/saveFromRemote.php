@@ -7,10 +7,13 @@ PhpManager::create()
     ->execute('saveFromRemote', function (PhpManager $o, Config $c) {
 
 
-        $cmd = $o->replaceTags("ssh {sshString} 'mysqldump -u{remoteDbUser} -p{remoteDbPass} {remoteDb}' > \"{&tmpFile}\"");
+        
+        $command = MYSQL_PREFIX . "mysqldump";
+
+        $cmd = $o->replaceTags("ssh {sshString} '$command -u{remoteDbUser} -p{remoteDbPass} {remoteDb}' > \"{&tmpFile}\"");
 
         if ('1' === $c->secure) {
-            $displayCmd = $o->replaceTags("ssh {sshString} 'mysqldump -u{remoteDbUser} -pXXX {remoteDb}' > \"{&tmpFile}\"");
+            $displayCmd = $o->replaceTags("ssh {sshString} '$command -u{remoteDbUser} -pXXX {remoteDb}' > \"{&tmpFile}\"");
         }
         else {
             $displayCmd = $cmd;
