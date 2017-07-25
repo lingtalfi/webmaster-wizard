@@ -525,6 +525,10 @@ History Revisions
 --------------------
 
 
+- 1.7.0 -- 2017-07-25 15:59
+
+    Add MYSQL_PREFIX_DISTANT for databaseApplySave tasks 
+    
 - 1.6.0 -- 2017-07-25 15:50
 
     Add MYSQL_PREFIX for databaseApplySave tasks 

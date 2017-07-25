@@ -6,7 +6,7 @@ require_once __DIR__ . "/../../phpManager.plugin/init.php";
 PhpManager::create()
     ->execute('saveFromRemoteDestructive', function (PhpManager $o, Config $c) {
 
-        $command = MYSQL_PREFIX . "mysqldump";
+        $command = MYSQL_PREFIX_DISTANT . "mysqldump";
 
         $cmd = $o->replaceTags("ssh {sshString} '$command --add-drop-database -u{remoteDbUser} -p{remoteDbPass} --databases {remoteDb}' > \"{&tmpFile}\"");
 

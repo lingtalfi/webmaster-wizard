@@ -8,7 +8,7 @@ PhpManager::create()
 
 
         
-        $command = MYSQL_PREFIX . "mysqldump";
+        $command = MYSQL_PREFIX_DISTANT . "mysqldump";
 
         $cmd = $o->replaceTags("ssh {sshString} '$command -u{remoteDbUser} -p{remoteDbPass} {remoteDb}' > \"{&tmpFile}\"");
 

@@ -11,7 +11,7 @@ PhpManager::create()
     ->execute('applyToRemote', function (PhpManager $o, Config $c) {
 
 
-        $command = MYSQL_PREFIX . "mysql";
+        $command = MYSQL_PREFIX_DISTANT. "mysql";
 
 
         $cmd = $o->replaceTags("ssh {sshString} '$command -u{remoteDbUser} -p{remoteDbPass} {remoteDb}' < \"{&tmpFile}\"");
