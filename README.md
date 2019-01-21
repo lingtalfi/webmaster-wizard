@@ -9,7 +9,7 @@ It's all about automation.
 
 
 
-![wwiz-demo](http://s19.postimg.org/v24diue8z/wwiz_demo.gif)
+![wwiz-demo](http://lingtalfi.com/img/bash/webmaster-wizard/wwiz-demo.gif)
 
 
 

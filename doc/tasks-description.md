@@ -142,7 +142,7 @@ Do the basic mysql < file and mysqldump operations in any direction using two co
 Gives more power to your fingertips.
 
 
-![wwiz -- apply-save ](http://s19.postimg.org/hx2nhyoir/wwiz_save_apply.jpg)
+![wwiz -- apply-save ](http://lingtalfi.com/img/bash/webmaster-wizard/wwiz-save-apply.jpg)
 
 
 ### saveFromLocal
@@ -198,7 +198,7 @@ that kind of things.
 Batch File Treatments is based on a workflow that you can adopt if you want.
 
 
-![wwiz -- batch-file-treatment ](http://s19.postimg.org/kmyr4dmzn/wwiz_batch_file_treatment.jpg)
+![wwiz -- batch-file-treatment ](http://lingtalfi.com/img/bash/webmaster-wizard/wwiz-batch-file-treatment.jpg)
 
 
 First, you copy a directory to a working directory, so that your original files are left untouched. This is called import.
